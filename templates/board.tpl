@@ -1,11 +1,12 @@
 <html>
 	<head>
 		{% if post %}
-		<title>{{ post.p_title }}</title>
+		<title>{{ post.p_title }} - {{site_title}}</title>
 		{% else %}
-		<title>{{ board.b_name }}</title>
+		<title>{{ site_title }}</title>
 		{% endif %}
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 
 		<script src="/jquery/jquery-1.11.2.min.js"></script>
 			<script src="/jquery/jquery-migrate-1.2.1.min.js"></script>
@@ -165,7 +166,7 @@
 									<button class="qnamode comment-submit btn btn-primary">Submit</button>
 									</form>
 									<script type="text/javascript">
-										CKEDITOR.replace( 'qnacomment-{{c.c_id}}', {height:"150px",});
+										CKEDITOR.replace( 'qnacomment-{{c.c_id}}', {height:"150px",filebrowserUploadUrl: '/backend/upload.php'});
 									</script>
 								{% else %}
 									<form action="/backend/post.php" method="POST" class="align-right">
@@ -191,7 +192,7 @@
 						<textarea id="qnacomment" {{ user?'':'disabled'}} class="comment-write" name="comment-body"></textarea><button class="qnamode comment-submit btn btn-primary">Submit</button>
 					</form>
 					<script type="text/javascript">
-						CKEDITOR.replace( 'qnacomment' );
+						var editor = CKEDITOR.replace( 'qnacomment', {filebrowserUploadUrl: '/backend/upload.php'} );
 					</script>
 					{% else %}
 					<form action="/backend/post.php" method="POST">
