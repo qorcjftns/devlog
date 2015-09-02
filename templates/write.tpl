@@ -92,6 +92,6 @@
 	</div>
 </div>
 <script type="text/javascript">
-	CKEDITOR.replace( 'write-body' );
-	CKEDITOR.replace( 'add-body' );
+	CKEDITOR.replace( 'write-body',{filebrowserUploadUrl: '/backend/upload.php'} );
+	CKEDITOR.replace( 'add-body',{filebrowserUploadUrl: '/backend/upload.php'} );
 </script>
