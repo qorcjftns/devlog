@@ -1,0 +1,19 @@
+DirectoryIndex index.php
+
+# Rewrite Engine
+RewriteEngine On
+RewriteRule ^b/([0-9]+)$ /b.php?query=&postno=$1 [B,QSA]
+RewriteRule ^b/([0-9]+)/$ /b.php?query=&postno=$1 [B,QSA]
+RewriteRule ^b/([/:\+a-zA-Z0-9_-]+)/([0-9]+)$ /b.php?query=$1&postno=$2 [B,QSA]
+RewriteRule ^b/([/:\+a-zA-Z0-9_-]+)/([0-9]+)/$ /b.php?query=$1&postno=$2 [B,QSA]
+RewriteRule ^b/([/:\+a-zA-Z0-9_-]+)/$ /b.php?query=$1 [B,QSA]
+RewriteRule ^b/([/:\+a-zA-Z0-9_-]+)$ /b.php?query=$1 [B,QSA]
+RewriteRule ^b/$ /b.php [B,QSA]
+RewriteRule ^b$ /b.php [B,QSA]
+
+RewriteRule ^manual/([/\+a-zA-Z0-9_-]+)/$ /manual.php?query=$1 [B,QSA]
+RewriteRule ^manual/([/\+a-zA-Z0-9_-]+)$ /manual.php?query=$1 [B,QSA]
+
+
+# 404 Page
+ErrorDocument 404 /~McChicken/DevLog/notfound.php
