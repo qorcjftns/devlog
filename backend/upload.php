@@ -1,14 +1,13 @@
 <?php
 
-$upload_dir = "/image/uploads/";
+$upload_dir = "../image/uploads/";
 $filename = tempnam($upload_dir, '');
 unlink($filename);
-
-if (file_exists($upload_dir . $_FILES["upload"]["name"])) {
+$milliseconds = round(microtime(true) * 1000);
+if (file_exists($upload_dir . $milliseconds . $_FILES["upload"]["name"])) {
 	echo $_FILES["upload"]["name"] . " already exists please choose another image.";
 } else {
-
-	move_uploaded_file($_FILES["upload"]["tmp_name"], $upload_dir . $_FILES["upload"]["name"]);
+	move_uploaded_file($_FILES["upload"]["tmp_name"], $upload_dir . $milliseconds . $_FILES["upload"]["name"]);
 
 	// Required: anonymous function reference number as explained above.
 	$funcNum = $_GET['CKEditorFuncNum'] ;
@@ -18,11 +17,11 @@ if (file_exists($upload_dir . $_FILES["upload"]["name"])) {
 	$langCode = $_GET['langCode'] ;
 	 
 	// Check the $_FILES array and save the file. Assign the correct path to a variable ($url).
-	$url = $upload_dir . $_FILES["upload"]["name"];
+	$url = "image/uploads/" . $milliseconds . $_FILES["upload"]["name"];
 	// Usually you will only assign something here if the file could not be uploaded.
 	$message = '';
 	 
-	echo "<script> window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '$message');</script>";
+	echo "<script> window.parent.CKEDITOR.tools.callFunction($funcNum, location.protocol + '//' + location.hostname + '/' + '$url', '$message');</script>";
 }
 
 ?>
