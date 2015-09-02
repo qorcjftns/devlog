@@ -3,7 +3,7 @@
 	<div class="container-fluid">
 		<!-- main logo -->
 		<div class="navbar-header">
-			<div class="navbar-brand"><a href="/"><img src="/image/logo.png" alt="{{ site_title }}"/></a></div>
+			<div class="navbar-brand"><a href="/"><img src="/image/Logo.png" alt="{{ site_title }}"/></a></div>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-bar">
 				<span class="sr-only">Toggle Navbar</span>
 				<span class="icon-bar"></span>
