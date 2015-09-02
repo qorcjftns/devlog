@@ -5,6 +5,7 @@
 		{% else %}
 		<title>{{ board.b_name }}</title>
 		{% endif %}
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
 		<script src="/jquery/jquery-1.11.2.min.js"></script>
 			<script src="/jquery/jquery-migrate-1.2.1.min.js"></script>
