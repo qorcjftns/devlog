@@ -66,11 +66,11 @@
 		$con = new mysqli("localhost", "root", "cjftns119", "DevLog");
 
 		// Get more fields
-		$user_email = mysql_real_escape_string($_POST['email']);
+		$user_email = mysqli_real_escape_string($con,$_POST['email']);
 		$user_pw = md5($_POST['password']);
-		$user_nickname = mysql_real_escape_string($_POST['nickname']);
+		$user_nickname = mysqli_real_escape_string($con,$_POST['nickname']);
 
-		$encrypted_pw = mysql_real_escape_string($user_pw);
+		$encrypted_pw = mysqli_real_escape_string($con,$user_pw);
 
 		// Validation Check
 		// 1. Check if valid email
