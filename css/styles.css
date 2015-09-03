@@ -10,6 +10,9 @@ a:hover {
 h1 {
 	font-weight:bold;
 }
+.post-wrapper {
+	padding:0;
+}
 .nav > li > a:hover{
     background-color:#888 !important;
     color:white !important;
@@ -192,7 +195,7 @@ h1 {
 	font-size:18px;
 }
 .post-content {
-	padding:20px;
+	padding:10px;
 	border-bottom:2px solid #DDD;
 	min-height:100px;
 	word-wrap:break-word;
@@ -249,7 +252,7 @@ select[name=option] {
 }
 
 .post-comments {
-	padding:10px 20px;
+	padding:10px 10px;
 	border-bottom:2px solid #DDD;
 }
 .comment-write {

@@ -222,25 +222,25 @@
 			<div class="col-xs-12 board-wrapper">
 				<h3>Posts</h3>
 				<div class="row board-header">
-					<div class="col-xs-1 f">
+					<div class="col-xs-2 col-sm-1 f">
 						No.
 					</div>
-					<div class="col-xs-7">
+					<div class="col-xs-7 col-sm-7">
 						Title
 					</div>
-					<div class="col-xs-1">
+					<div class="col-xs-3 col-sm-1">
 						User
 					</div>
-					<div class="col-xs-1">
+					<div class="hidden-xs col-sm-1">
 						View
 					</div>
-					<div class="col-xs-2 l">
+					<div class="hidden-xs col-sm-2 l">
 						Date
 					</div>
 				</div>
 				{% for p in posts %}
 				<div class="row board-content {{ p.p_id == posts[0].p_id ? 'f' }} {{ p.p_id == post.p_id ? 'current' }}">
-					<div class="col-xs-1 no">
+					<div class="col-xs-2 col-sm-1 no">
 						{{p.p_id}}
 					</div>
 					{% if req == "" %}
@@ -250,13 +250,13 @@
 					{% endif %}
 						{{p.p_title}}
 					</a>
-					<div class="col-xs-1 view">
+					<div class="col-xs-3 col-sm-1 view">
 						{{p.u_nickname}}
 					</div>
-					<div class="col-xs-1 view">
+					<div class="hidden-xs col-sm-1 view">
 						{{p.p_view}}
 					</div>
-					<div class="col-xs-2 timestamp">
+					<div class="hidden-xs col-sm-2 timestamp">
 						{% if p.initial_time > date('-1days') %}
 							{{ p.p_initial_time|date('Y/m/d') }}
 						{% else %}
