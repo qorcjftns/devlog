@@ -96,7 +96,7 @@ function addTagFilter(t) {
 		var arguments = curLocation.split("?")[0].split("/");
 		if(arguments.indexOf(newtag) < 0) {
 			if(arguments[arguments.length-1] == "") {
-				if(/[0-9]/.test(arguments[arguments.length-2])) {
+				if(/^\d+$/.test(arguments[arguments.length-2])) {
 					arguments[arguments.length-2] = newtag;
 					arguments[arguments.length-1] = "";
 				} else {
@@ -104,7 +104,7 @@ function addTagFilter(t) {
 					arguments[arguments.length] = "";
 				}
 			} else {
-				if(/[0-9]/.test(arguments[arguments.length-1])) {
+				if(/^\d+$/.test(arguments[arguments.length-1])) {
 					arguments[arguments.length-1] = newtag;
 				} else {
 					arguments[arguments.length] = newtag;
