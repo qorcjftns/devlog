@@ -57,7 +57,7 @@
 							<button class="btn btn-primary">Log In</button>
 						</div>
 						<div class="login-footer center">
-							<div><a href="#" data-toggle="modal" data-target="#register">Create an account</a></div>
+							<div><a href="#" data-dismiss="modal" data-toggle="modal" data-target="#register">Create an account</a></div>
 							<div><a href="">Forgot password</a></div>
 						</div>
 					</form>

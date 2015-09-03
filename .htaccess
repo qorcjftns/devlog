@@ -4,10 +4,10 @@ DirectoryIndex index.php
 RewriteEngine On
 RewriteRule ^b/([0-9]+)$ /b.php?query=&postno=$1 [B,QSA]
 RewriteRule ^b/([0-9]+)/$ /b.php?query=&postno=$1 [B,QSA]
-RewriteRule ^b/(.+)/([0-9]+)$ /b.php?query=$1&postno=$2 [B,QSA]
-RewriteRule ^b/(.+)/([0-9]+)/$ /b.php?query=$1&postno=$2 [B,QSA]
-RewriteRule ^b/(.+)/$ /b.php?query=$1 [B,QSA]
-RewriteRule ^b/(.+)$ /b.php?query=$1 [B,QSA]
+RewriteRule ^b/([/\s0-9a-zA-Z가-힣]+)/([0-9]+)$ /b.php?query=$1&postno=$2 [B,QSA]
+RewriteRule ^b/([/\s0-9a-zA-Z가-힣]+)/([0-9]+)/$ /b.php?query=$1&postno=$2 [B,QSA]
+RewriteRule ^b/([/\s0-9a-zA-Z가-힣]+)/$ /b.php?query=$1 [B,QSA]
+RewriteRule ^b/([/\s0-9a-zA-Z가-힣]+)$ /b.php?query=$1 [B,QSA]
 RewriteRule ^b/$ /b.php [B,QSA]
 RewriteRule ^b$ /b.php [B,QSA]
 
