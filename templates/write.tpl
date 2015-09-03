@@ -20,12 +20,6 @@
 						<div class="write-label">Body</div>
 						<div class="write-field"><textarea id="write-body" name="body"></textarea></div>
 					</div>
-					<div class="files-row">
-						<div class="write-label">Files</div>
-						<div class="write-field">
-							<input name="files" type="file" multiple>
-						</div>
-					</div>
 					<div class="tag-row">
 						<div class="write-label">Tags</div>
 						<div class="write-field">
@@ -64,12 +58,6 @@
 					<div class="body-row">
 						<div class="write-label">Body</div>
 						<div class="write-field"><textarea id="add-body" name="body">{{post.p_body_raw}}</textarea></div>
-					</div>
-					<div class="files-row">
-						<div class="write-label">Files</div>
-						<div class="write-field">
-							<input name="files" type="file" multiple>
-						</div>
 					</div>
 					<div class="tag-row">
 						<div class="write-label">Tags</div>

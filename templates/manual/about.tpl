@@ -41,6 +41,18 @@
 			<p>아래는 DevLog의 패치내역입니다. 세세한 내역까지는 공개되지 않을 수 있습니다.</p>
 			<ul>
 				<li>2015-09-01 Launch</li>
+				<li>2015-09-03
+					<ul>
+						<li>Added Support for Korean Tags</li>
+						<li>Register bug fixed</li>
+						<li>Added feature to add image/file.</li>
+					</ul>
+				</li>
+			</ul>
+			<h2>Powered By</h2>
+			<ul>
+				<li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+				<li><a href="http://ionicons.com">Ionicons</a></li>
 			</ul>
 		</div>
 	</body>
