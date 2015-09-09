@@ -49,10 +49,12 @@
 		}
 
 		$xpath = new DOMXPath($dom);            // create a new XPath
+		/*
 		$nodes = $xpath->query('//*[@style]');  // Find elements with a style attribute
 		foreach ($nodes as $node) {              // Iterate over found elements
 			$node->removeAttribute('style');    // Remove style attribute
 		}
+		*/
 
 		$result = $dom->saveHTML();
 		return $result;

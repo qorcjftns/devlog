@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>KLDP.net:환영합니다.: mod_url: 새 파일 버전 릴리즈</title>
+<link type="text/css" rel="stylesheet" href="/themes/naver/css/main.css?3456 " />
+<link type="text/css" rel="stylesheet" href="/themes/naver/css/mypage.css?3456 " />
+<link type="text/css" rel="stylesheet" href="/themes/naver/css/compat.css?3456 " />
+<link type="text/css" rel="stylesheet" href="/themes/naver/css/project.css?3456 " />
+<script type="text/javascript" src="/js/prototype/prototype.js?3456 "></script>
+<script type="text/javascript" src="/tabber/divtool.js?3456 "></script>
+<script type="text/javascript" src="/js/utils.js?3456 "></script>
+<script type="text/javascript" src="/js/ie6_flicker.js?3456 "></script>
+
+<script type='text/javascript'>
+/*<![CDATA[*/
+(function() {
+	ids = ['wikiSideMenu', 'project_etc', 'sub_menu'];
+	wrap = ['content_project_sub', 'content_wrap', 'snb'];
+
+	function fix_height(wrap, ids) {
+		var height;
+		for (var i = 0; i < wrap.length; i++) {
+			if ($(wrap[i])) {
+				if (document.all) {
+       					height = $(wrap[i]).offsetHeight;
+				} else {
+       					height = $(wrap[i]).clientHeight;
+				}
+				/* reset position:relative of the content_project_sub. See [#3822] */
+				$(wrap[i]).style.position = 'static';
+				break;
+			}
+		}
+		var del = 0;
+		for (var i = 0; i < ids.length; i++) {
+			if ($(ids[i])) {
+        			var h = $(ids[i]).offsetHeight;
+				if (del == 0) del = h - height;
+				$(ids[i]).style.height = (height) + 'px';
+				fake_pad = parseInt($(ids[i]).style.paddingBottom) + parseInt($(ids[i]).style.marginBottom);
+				if (fake_pad > 0) {
+					$(ids[i]).style.paddingBottom = fake_pad;
+				} else {
+					$(ids[i]).style.paddingBottom = '30px';
+				}
+				$(ids[i]).style.marginBottom = 0;
+			}
+		}
+	}
+        var oldOnload = window.onload;
+        if (typeof window.onload != 'function') {
+                window.onload = function() {
+			fix_height(wrap, ids);
+			fix_webkit();
+                }
+        } else {
+                window.onload = function() {
+                        oldOnload();
+			fix_height(wrap, ids);
+			fix_webkit();
+                }
+        }
+})();
+/*]]>*/
+</script></head>
+<body>
+<div id="wrap">
+	<div class="haze"><a href="#start">skip menu and go to main content</a></div>
+
+	
+<div id="header">
+	<div id="gnb_area" style="border-top:4px solid #ddd; background:#fff; border-bottom:10px solid #fff;"></div>
+	<h1><a href="/"><img src="/themes/naver/images/nforge-logo-idx.png" alt="nFORGE" width="101" height="25" /></a></h1>	
+	<div class="go_mypage">
+	<ul>
+		<li><a href="/account/login.php">로그인</a></li>
+	<li><a href="/account/register.php">사용자 등록</a></li>
+	<li><a href="/account/lostpw.php">아이디/비밀번호 찾기</a></li>
+			</ul>
+	</div>
+	<div id="top_navi" >
+		<ul>
+			
+			<li class='navi_home'><a  href="/"><span>홈</span></a></li>
+			<li class='navi_project'><a  href="/softwaremap/"><span>프로젝트</span></a></li>
+						<li class='navi_news'><a  href="/news"><span>새소식</span></a></li>
+			<li class='navi_statistics'><a  href="/top/toplist.php"><span>통계자료</span></a></li>
+		</ul>
+		<div id='top_search'>
+		<p></p>
+		<form id="go" action="/search/" method="get" onsubmit="if (this.words.value == '') {message_box('검색어를 입력해 주세요.'); return false;} remove_htmltag(this.words); " >
+						<input type="hidden" name="group_id" value="490" />
+						<input type="hidden" name="form_group_name" id="form_group_name" value="" />
+			<p class="search_sphere">
+				<select name="type_of_search" id="type_of_search">
+										<option value="full">현재프로젝트</option>
+										<option value="soft">모든프로젝트</option>
+				</select>
+				<input type="text" name="words" id="search_word" maxlength="80" value="" title="get" />
+				<span class="search_button"><input type="submit" name="n_btn_search" id="btn_search" value="검색"  /></span>
+			</p>
+		</form>
+		</div>
+	</div>
+</div>
+	<div id="main_wrap">
+		<p id="start" class="haze">본문시작</p>
+
+				<h2 class="title_style05">
+			<a href="http://modurl.kldp.net" title="mod_url"><span>mod_url</span></a>
+			<a href="/export/rss_project.php?group_id=490"><img src='/themes/naver/images/icon_01.jpg' style="position: relative; top: 2px;"/></a>
+		</h2>
+
+		<div id="content_project_sub">
+
+		<!--left-->
+		<div id="sub_menu" class="project_menu_sub">
+			<ul>
+														<li class="menu_home">
+										<a href="/projects/modurl/">
+											프로젝트 홈
+										</a>
+									</li>
+														<li class="menu_forum">
+										<a href="/projects/modurl/forum">
+											게시판
+										</a>
+									</li>
+														<li class="menu_issue">
+										<a href="/projects/modurl/bugs">
+											이슈
+										</a>
+									</li>
+														<li class="menu_code">
+										<a href="/projects/modurl/src">
+											코드
+										</a>
+									</li>
+														<li class="menu_download on">
+										<a href="/projects/modurl/download">
+											다운로드
+										</a>
+									</li>
+							</ul>
+		</div><!--// project_menu_sub -->
+
+		<!--center-->
+				<!-- div class="project_con" -->
+				<!-- -->
+
+				
+		<!-- login area  -->
+				
+		<!--// login area  -->
+					<!-- div class="project_con_issue" -->
+			
+			<!-- contents -->
+				<div id="project_content">
+		<div class="sub_title">
+			<h3><span>릴리즈</span></h3>
+		</div>
+		<div id="download_wrap">
+			<div id="downloading">
+				<div class="btn_project_download" style="float:left;">
+					<h3><a href='/frs/download.php/6056/mod_url-apache2-1.21.tar.bz2'><span>DOWNLOAD</span></a></h3>
+					<a href='/frs/download.php/6056/mod_url-apache2-1.21.tar.bz2'>
+						<span class="t_version">
+							<span title="mod_url for Apache 2">mod_url for Apache 2</span>
+							<span class="p11">2014-03-25 01:32</span>
+						</span>
+					</a>
+				</div>
+				<div class="message">
+					<div>
+						<p>파일은 자동으로 다운로드 됩니다.</p>
+						<p>다운로드에 문제가 발생할 경우, 다운로드 버튼을 이용해 주시기 바랍니다.</p>
+					</div>
+				</div>
+				<iframe id="file_download" height="0" frameborder="0" scrolling="no" width="0" src="/frs/download.php/6056/mod_url-apache2-1.21.tar.bz2"></iframe>
+			</div>
+			<div class="comment">
+				<form id="modwrt" action="/projects/modurl/download/shownote?release_id=2188" method="post">
+				<div>
+				<table cellspacing="0" cellpadding="0" border="0" class="cmt_input" style="margin:0 auto; text-align:left;">
+					<tbody>
+						<tr>
+							<th>댓글입력</th>
+							<td>
+															<img id="captcha" src="/account/securimage_show.php" alt="CAPTCHA Image" style="text-align:left; vertical-align:top;" />
+								<input type="text" name="captcha_code" size="10" maxlength="6" />
+								<a class="button small" href="#" onclick="document.getElementById('captcha').src = '/account/securimage_show.php?' + Math.random(); return false"><span>Reload</span></a><br />
+															<textarea name="details" rows="5" cols="100" class="input_txt" onKeyDown="setLine(this)"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td colspan='2' class="btn">
+								<input type="hidden" name="form_key" value="5dde6d74dc2e16c25596185d25751799" />
+								<input type="hidden" name="func" value="addcmt" />
+								<input type="hidden" name="release_id" value="2188" />
+								<p>
+								<a class="button" onclick="if(document.getElementById('modwrt').details.value==''){ message_box('내용이 없습니다');return false;}else{return document.getElementById('modwrt').submit()}" href="#"><span>댓글입력</span></a>								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+			<!--// contents -->
+
+					
+		</div><!--// content_project_sub(project selected) or container(no project selected) -->
+	</div><!--// main_wrap -->
+
+	<div id="footer">Powered by <strong><a href="http://dev.naver.com/projects/nforge">nFORGE</a></strong></div>
+	
+</div><!--// wrap -->
+</body>
+</html>

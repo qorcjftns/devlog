@@ -7,6 +7,8 @@
 		{% endif %}
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		
+		<meta name="keywords" content="dev-log KCBS devlog dlog dvlg {{tag_name|join(' ')}}">
 
 		<script src="/jquery/jquery-1.11.2.min.js"></script>
 			<script src="/jquery/jquery-migrate-1.2.1.min.js"></script>
